@@ -1,3 +1,4 @@
+#include <iostream>
 using namespace std;
 
    static bool c = false;
@@ -8,24 +9,24 @@ struct node
 };
 
 // A utility function to create a new BST node
-struct node *newNode(int item)
+node *newNode(int item)
 {
     //struct node *temp =  (struct node *)malloc(sizeof(struct node));
     struct node *temp = new node();
     temp->key = item;
     temp->left = temp->right = NULL;
     return temp;
-} ;
+}
 
 // A utility function to do inorder traversal of BST
 void inorder(struct node *root)
 {
     if (root == NULL)
         return;
-        inorder(root->left);
-        //printf("%d \n", root->key);
-        cout<<root->key<<"  ";
-        inorder(root->right);
+    inorder(root->left);
+    //printf("%d \n", root->key);
+    cout <<root->key<<"  ";
+    inorder(root->right);
 }
 void preorder(struct node *root)
 {
@@ -40,7 +41,7 @@ void postorder(struct node *root)
     if(root == NULL)
         return;
     postorder(root->left);
-    postorder(root->right);
+     postorder(root->right);
     cout<<root->key<<"  ";
 }
 
@@ -58,9 +59,9 @@ struct node* insert(struct node* node, int key)
 
     /* return the (unchanged) node pointer */
     return node;
-} ;
+} //;
 
-   node* findMin(node*root)
+node* findMin(node*root)
 {
     while(root->left!=NULL)
     {
@@ -136,8 +137,8 @@ node* Delete( node* root,int value)
 		}
 	}
 	return root;
-
 }
+
 int main()
 {
     int num,temp,choice;

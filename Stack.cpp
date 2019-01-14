@@ -46,7 +46,7 @@ void push(struct Stack* stack, char op)
 }
 int evaluatePostfix(char* exp)
 {
-    struct Stack* stack = createStack(strlen(exp));
+    struct Stack* stack = createStack(sizeof(exp)/sizeof(exp[0]));
     int i;
     if (!stack) return -1;
     for (i = 0; exp[i]; ++i)
@@ -71,6 +71,6 @@ int evaluatePostfix(char* exp)
 int main()
 {
     char exp[] = "231*+9-";
-    cout <<  evaluatePostfix(exp));
+    cout <<  evaluatePostfix(exp);
     return 0;
 }
